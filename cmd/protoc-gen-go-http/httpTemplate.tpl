@@ -46,8 +46,7 @@ func _{{$svrType}}_{{.Name}}{{.Num}}_HTTP_Handler(srv {{$svrType}}HTTPServer) fu
 		if err != nil {
 			return err
 		}
-		reply := out.(*{{.Reply}})
-		return ctx.Result(200, reply{{.ResponseBody}})
+		return ctx.Result(200, out)
 	}
 }
 {{end}}
